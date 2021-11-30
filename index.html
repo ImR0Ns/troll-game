@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/ico" href="./global-icon/favicon.ico"/>
+    <!-- BOOTSTRAP & JQUERY -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+
+    <!-- BOOTSTRAP & JQUERY -->
+
+    <title>Click me</title>
+
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="./js/script.js"></script>
+
+</head>
+<body>
+    <div class="cu_margine">
+        <div class="text-center">
+            <label id="minutes">00</label>:<label id="seconds">00</label>
+        </div>
+        <p class="text-center">Buy the last click option to win the game
+        </p>
+        <p class="text-center egg">+One Easter EGG</p>
+        <p class="text-center">Every 10 seconds you get 10 points!</p>
+        <p class="points text-center">Points: 0</p>
+        <p class="text-center click">Click me!</p>
+        <p class="text-center">Beta test</p>
+        <div class="text-center">
+            <button class="10clicks">Click boost (+10) | 100 P</button>
+        </div>
+        <div class="text-center mt-2">
+            <button class="clicks2">Click boost (+100) | 5000 P</button>
+        </div>
+        <div class="text-center mt-2">
+            <button class="clicks3">Click boost (+1000) | 50000 P</button>
+        </div>
+        <div class="text-center mt-2">
+            <button class="clicks4">Click boost (+10000) | 10000000 P</button>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+    var minutesLabel = document.getElementById("minutes");
+var secondsLabel = document.getElementById("seconds");
+var totalSeconds = 0;
+setInterval(setTime, 1000);
+
+function setTime() {
+  ++totalSeconds;
+  secondsLabel.innerHTML = pad(totalSeconds % 60);
+  minutesLabel.innerHTML = pad(parseInt(totalSeconds / 60));
+}
+
+function pad(val) {
+  var valString = val + "";
+  if (valString.length < 2) {
+    return "0" + valString;
+  } else {
+    return valString;
+  }
+}
+</script>
